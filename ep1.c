@@ -73,7 +73,7 @@ int main(int argc, char ** argv){
 
 		clock_t toc = clock();
 
-		tempo_carregamento = (double)(toc - tic) / CLOCKS_PER_SEC;
+		tempo_carregamento = ((double)(toc - tic) / CLOCKS_PER_SEC) * 1000;
 
 		// Mensagens iniciais
 		printf("Tipo de indice: '%s'\n", argv[2]);
