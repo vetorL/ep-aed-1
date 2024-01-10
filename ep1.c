@@ -31,7 +31,9 @@ int main(int argc, char ** argv){
 	double tempo_carregamento;
 
 	if(argc == 3) {
-		
+
+		clock_t tic = clock();
+
 		in = fopen(argv[1], "r");
 
 		printf(">>>>> Carregando arquivo...\n");
@@ -68,11 +70,15 @@ int main(int argc, char ** argv){
 
 		printf(">>>>> Arquivo carregado!\n");
 
+		clock_t toc = clock();
+
+		tempo_carregamento = (double)(toc - tic) / CLOCKS_PER_SEC;
+
 		// Mensagens iniciais
 		printf("Tipo de indice: '%s'\n", argv[2]);
 		printf("Arquivo texto: '%s'\n", argv[1]);
 		printf("Numero de linhas no arquivo: %d\n", contador_linha);
-		printf("Tempo para carregar o arquivo e construir o indice: %d ms\n", 0);
+		printf("Tempo para carregar o arquivo e construir o indice: %f ms\n", tempo_carregamento);
 
 		return 0;
 	}
