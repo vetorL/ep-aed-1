@@ -81,6 +81,19 @@ int main(int argc, char ** argv){
 		printf("Numero de linhas no arquivo: %d\n", contador_linha);
 		printf("Tempo para carregar o arquivo e construir o indice: %f ms\n", tempo_carregamento);
 
+		// Entrada
+		bool continua = true;
+
+		while(continua)
+		{
+			char entrada[100];
+
+			// recebe a entrada e armazena
+			printf("> ");
+			scanf("%s", entrada);
+		}
+
+
 		return 0;
 	}
 
