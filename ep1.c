@@ -28,8 +28,8 @@ int main(int argc, char ** argv){
 	char * palavra;	
 	int contador_linha;
 
-	if(argc == 2) {
-
+	if(argc == 3) {
+		
 		in = fopen(argv[1], "r");
 
 		printf(">>>>> Carregando arquivo...\n");
