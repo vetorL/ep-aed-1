@@ -66,6 +66,12 @@ int main(int argc, char ** argv){
 
 		printf(">>>>> Arquivo carregado!\n");
 
+		// Mensagens iniciais
+		printf("Tipo de indice: '%s'\n", argv[2]);
+		printf("Arquivo texto: '%s'\n", argv[1]);
+		printf("Numero de linhas no arquivo: %d\n", contador_linha);
+		printf("Tempo para carregar o arquivo e construir o indice: %d ms\n", 0);
+
 		return 0;
 	}
 
