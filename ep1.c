@@ -91,6 +91,16 @@ int main(int argc, char ** argv){
 			// recebe a entrada e armazena
 			printf("> ");
 			scanf("%s", entrada);
+
+			if(strcmp(entrada, "fim") == 0) 
+			{
+				// caso a entrada seja "fim", encerra o programa
+				return 0;
+			}
+			else 
+			{
+				continue;
+			}
 		}
 
 
