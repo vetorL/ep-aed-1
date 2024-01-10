@@ -28,6 +28,7 @@ int main(int argc, char ** argv){
 	char * quebra_de_linha;
 	char * palavra;	
 	int contador_linha;
+	int tempo_carregamento;
 
 	if(argc == 3) {
 		
