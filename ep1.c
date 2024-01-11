@@ -35,6 +35,7 @@ int main(int argc, char ** argv){
 
 	if(argc == 3) {
 
+		// Inicia a contagem do tempo de execução
 		clock_t tic = clock();
 
 		in = fopen(argv[1], "r");
@@ -73,6 +74,7 @@ int main(int argc, char ** argv){
 
 		printf(">>>>> Arquivo carregado!\n");
 
+		// Termina a contagem do tempo de execução
 		clock_t toc = clock();
 
 		tempo_carregamento = ((double)(toc - tic) / CLOCKS_PER_SEC) * 1000;
@@ -95,6 +97,7 @@ int main(int argc, char ** argv){
 			printf("> ");
 			fgets(entrada, 100, stdin);
 
+			// pega primeira palavra da string (primeiro token)
 			comando = strtok(entrada, " ");			
 			
 			if(strcmp(comando, "fim\n") == 0) 
@@ -104,8 +107,13 @@ int main(int argc, char ** argv){
 			}
 			else if (strcmp(comando, "busca") == 0)
 			{
+				// caso o comando seja "busca", obter segundo token
+				// (segunda palavra da string)
+
+				// obtem palavra a ser buscada 
 				char *palavra;
 				palavra = strtok(NULL, "\n");
+				
 				continue;
 			}
 			else 
