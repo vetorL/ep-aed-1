@@ -104,8 +104,8 @@ int main(int argc, char ** argv){
 			}
 			else if (strcmp(comando, "busca") == 0)
 			{
-				token = strtok(NULL, "\n");
-				puts(token);
+				char *palavra;
+				palavra = strtok(NULL, "\n");
 				continue;
 			}
 			else 
