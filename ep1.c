@@ -87,12 +87,17 @@ int main(int argc, char ** argv){
 		while(continua)
 		{
 			char entrada[100];
+			char *token;
 
 			// recebe a entrada e armazena
 			printf("> ");
-			scanf("%s", entrada);
+			fgets(entrada, 100, stdin);
 
-			if(strcmp(entrada, "fim") == 0) 
+			token = strtok(entrada, " ");			
+			
+			puts(token);
+
+			if(strcmp(token, "fim\n") == 0) 
 			{
 				// caso a entrada seja "fim", encerra o programa
 				return 0;
