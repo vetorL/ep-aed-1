@@ -102,6 +102,12 @@ int main(int argc, char ** argv){
 				// caso a entrada seja "fim", encerra o programa
 				return 0;
 			}
+			else if (strcmp(token, "busca") == 0)
+			{
+				token = strtok(NULL, "\n");
+				puts(token);
+				continue;
+			}
 			else 
 			{
 				continue;
