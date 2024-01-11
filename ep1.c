@@ -87,22 +87,20 @@ int main(int argc, char ** argv){
 		while(continua)
 		{
 			char entrada[100];
-			char *token;
+			char *comando;
 
 			// recebe a entrada e armazena
 			printf("> ");
 			fgets(entrada, 100, stdin);
 
-			token = strtok(entrada, " ");			
+			comando = strtok(entrada, " ");			
 			
-			puts(token);
-
-			if(strcmp(token, "fim\n") == 0) 
+			if(strcmp(comando, "fim\n") == 0) 
 			{
 				// caso a entrada seja "fim", encerra o programa
 				return 0;
 			}
-			else if (strcmp(token, "busca") == 0)
+			else if (strcmp(comando, "busca") == 0)
 			{
 				token = strtok(NULL, "\n");
 				puts(token);
