@@ -21,6 +21,8 @@
 
 #define TAMANHO 1000
 
+bool busca(char *palavra, char *indice);
+
 int main(int argc, char ** argv){
 
 	FILE * in;
@@ -117,4 +119,9 @@ int main(int argc, char ** argv){
 	}
 
 	return 1;
+}
+
+bool busca(char *palavra, char *indice)
+{
+	return false;
 }
