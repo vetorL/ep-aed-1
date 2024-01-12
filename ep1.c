@@ -138,6 +138,9 @@ int main(int argc, char ** argv){
 				// obtem palavra a ser buscada 
 				char *palavra;
 				palavra = strtok(NULL, "\n");
+
+				// busca pela palavra
+				busca(palavra, argv[2]);
 				
 				continue;
 			}
