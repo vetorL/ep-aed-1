@@ -155,6 +155,27 @@ int main(int argc, char ** argv){
 
 bool busca(char *palavra, char *indice)
 {
+	bool palavra_foi_encontrada = false;
+
+	if(strcmp(indice, "lista") == 0)
+	{
+		palavra_foi_encontrada = busca_lista(palavra);
+	}
+	else if(strcmp(indice, "arvore") == 0)
+	{
+		palavra_foi_encontrada = busca_arvore(palavra);
+	}
+
+	return palavra_foi_encontrada;
+}
+
+bool busca_lista(char *palavra)
+{
+	return false;
+}
+
+bool busca_arvore(char *palavra)
+{
 	return false;
 }
 
