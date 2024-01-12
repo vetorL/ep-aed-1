@@ -23,6 +23,8 @@
 
 bool busca(char *palavra, char *indice);
 void insere(char *palavra, char *indice);
+bool busca_lista(char *palavra);
+bool busca_arvore(char *palavra);
 void insere_lista(char *palavra);
 void insere_arvore(char *palavra);
 
