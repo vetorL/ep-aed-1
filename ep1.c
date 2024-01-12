@@ -168,6 +168,16 @@ bool busca(char *palavra, char *indice)
 		palavra_foi_encontrada = busca_arvore(palavra);
 	}
 
+	// Imprime no terminal de acordo com o resultado
+	if(palavra_foi_encontrada)
+	{
+		printf("Existem %d ocorrências da palavra '%s' na(s) seguinte(s) linha(s):\n", ocorrencias, palavra);
+	}
+	else
+	{
+		printf("Palavra '%s' nao encontrada.\n", palavra);
+	}
+
 	return palavra_foi_encontrada;
 }
 
