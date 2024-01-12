@@ -118,6 +118,7 @@ int main(int argc, char ** argv){
 			}
 			else 
 			{
+				printf("Opcao invalida!\n");
 				continue;
 			}
 		}
