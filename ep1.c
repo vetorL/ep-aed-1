@@ -163,6 +163,9 @@ bool busca(char *palavra, char *indice)
 	int ocorrencias = 0;
 	bool palavra_foi_encontrada = false;
 
+	// Inicia a contagem do tempo de busca
+	clock_t tic = clock();
+
 	if(strcmp(indice, "lista") == 0)
 	{
 		palavra_foi_encontrada = busca_lista(palavra);
@@ -181,6 +184,15 @@ bool busca(char *palavra, char *indice)
 	{
 		printf("Palavra '%s' nao encontrada.\n", palavra);
 	}
+
+	// Termina a contagem do tempo de busca
+	clock_t toc = clock();
+
+	// calcula o tempo de busca
+	double tempo_busca;
+	tempo_busca = ((double)(toc - tic) / CLOCKS_PER_SEC) * 1000;
+
+	printf("Tempo de busca: %f ms\n", tempo_busca);
 
 	return palavra_foi_encontrada;
 }
