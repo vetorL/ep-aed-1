@@ -22,6 +22,9 @@
 #define TAMANHO 1000
 
 bool busca(char *palavra, char *indice);
+void insere(char *palavra, char *indice);
+void insere_lista(char *palavra);
+void insere_arvore(char *palavra);
 
 int main(int argc, char ** argv){
 
@@ -84,6 +87,9 @@ int main(int argc, char ** argv){
 				// da mesma, uma vez que o ponteiro 'palavra' aponta para uma 
 				// substring dentro da string 'linha', e a cada nova linha lida
 				// o conteúdo da linha anterior é sobreescrito.
+
+				// insere a palavra na estrutura
+				insere(palavra, argv[2]);
 
 				printf("\t\t'%s'\n", palavra);
 			}
@@ -150,4 +156,28 @@ int main(int argc, char ** argv){
 bool busca(char *palavra, char *indice)
 {
 	return false;
+}
+
+void insere(char *palavra, char *indice)
+{
+	if(strcmp(indice, "lista") == 0)
+	{
+		insere_lista(palavra);
+	}
+	else if(strcmp(indice, "arvore") == 0)
+	{
+		insere_arvore(palavra);
+	}
+
+	return;
+}
+
+void insere_lista(char *palavra)
+{
+	return;
+}
+
+void insere_arvore(char *palavra)
+{
+	return;	
 }
