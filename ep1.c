@@ -42,6 +42,25 @@ int main(int argc, char ** argv){
 
 		printf(">>>>> Carregando arquivo...\n");
 
+		// Identifica a estrutura a ser utilizada
+		if(strcmp(argv[2], "arvore") == 0)
+		{
+
+		}
+		else if(strcmp(argv[2], "lista") == 0)
+		{
+		
+		}
+		else
+		{
+			printf("'%s' não é uma opção válida!\n", argv[2]);
+			return 1;
+		}
+
+		// Mensagens iniciais sobre os argumentos utilizados
+		printf("Tipo de indice: '%s'\n", argv[2]);
+		printf("Arquivo texto: '%s'\n", argv[1]);
+
 		contador_linha = 0;
  		linha = (char *) malloc((TAMANHO + 1) * sizeof(char));
 
@@ -79,9 +98,7 @@ int main(int argc, char ** argv){
 
 		tempo_carregamento = ((double)(toc - tic) / CLOCKS_PER_SEC) * 1000;
 
-		// Mensagens iniciais
-		printf("Tipo de indice: '%s'\n", argv[2]);
-		printf("Arquivo texto: '%s'\n", argv[1]);
+		// Mensagens iniciais sobre o arquivo e a execucao do codigo
 		printf("Numero de linhas no arquivo: %d\n", contador_linha);
 		printf("Tempo para carregar o arquivo e construir o indice: %f ms\n", tempo_carregamento);
 
