@@ -157,6 +157,7 @@ int main(int argc, char ** argv){
 
 bool busca(char *palavra, char *indice)
 {
+	int ocorrencias = 0;
 	bool palavra_foi_encontrada = false;
 
 	if(strcmp(indice, "lista") == 0)
