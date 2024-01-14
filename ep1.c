@@ -1,17 +1,17 @@
 // Membros do grupo:
 // ==========
-// Nome: Karen Miyuki Massuda 
+// Nome: Karen Miyuki Massuda
 // Número USP: 14585868
 // Turma: 04
-// ========== 
-// Nome: Vivian Ayumi Miamura 
+// ==========
+// Nome: Vivian Ayumi Miamura
 // Número USP: 14835140
 // Turma: 94
-// ========== 
-// Nome: Vítor Benvenisti Laguna Navarenho 
+// ==========
+// Nome: Vítor Benvenisti Laguna Navarenho
 // Número USP: 14749425
 // Turma: 94
-// ==========  
+// ==========
 
 #include <ctype.h>
 #include <stdio.h>
@@ -29,17 +29,19 @@ bool busca_arvore(char *palavra);
 void insere_lista(char *palavra);
 void insere_arvore(char *palavra);
 
-int main(int argc, char ** argv){
+int main(int argc, char **argv)
+{
 
-	FILE * in;
-	char * linha;
-	char * copia_ponteiro_linha;
-	char * quebra_de_linha;
-	char * palavra;	
+	FILE *in;
+	char *linha;
+	char *copia_ponteiro_linha;
+	char *quebra_de_linha;
+	char *palavra;
 	int contador_linha;
 	double tempo_carregamento;
 
-	if(argc == 3) {
+	if (argc == 3)
+	{
 
 		// Inicia a contagem do tempo de execução
 		clock_t tic = clock();
@@ -49,13 +51,11 @@ int main(int argc, char ** argv){
 		printf(">>>>> Carregando arquivo...\n");
 
 		// Identifica a estrutura a ser utilizada
-		if(strcmp(argv[2], "arvore") == 0)
+		if (strcmp(argv[2], "arvore") == 0)
 		{
-
 		}
-		else if(strcmp(argv[2], "lista") == 0)
+		else if (strcmp(argv[2], "lista") == 0)
 		{
-		
 		}
 		else
 		{
@@ -68,31 +68,34 @@ int main(int argc, char ** argv){
 		printf("Arquivo texto: '%s'\n", argv[1]);
 
 		contador_linha = 0;
- 		linha = (char *) malloc((TAMANHO + 1) * sizeof(char));
+		linha = (char *)malloc((TAMANHO + 1) * sizeof(char));
 
-		while(in && fgets(linha, TAMANHO, in)){
-			
-			if( (quebra_de_linha = strrchr(linha, '\n')) ) *quebra_de_linha = 0;
+		while (in && fgets(linha, TAMANHO, in))
+		{
+
+			if ((quebra_de_linha = strrchr(linha, '\n')))
+				*quebra_de_linha = 0;
 
 			printf("linha %03d: '%s'\n", contador_linha + 1, linha);
 
-			// fazemos uma copia do endereço que corresponde ao array de chars 
-			// usado para armazenar cada linha lida do arquivo pois a função 'strsep' 
-			// modifica o endereço do ponteiro a cada chamada feita a esta função (e 
+			// fazemos uma copia do endereço que corresponde ao array de chars
+			// usado para armazenar cada linha lida do arquivo pois a função 'strsep'
+			// modifica o endereço do ponteiro a cada chamada feita a esta função (e
 			// não queremos que 'linha' deixe de apontar para o inicio do array).
 
 			copia_ponteiro_linha = linha;
 
-			while( (palavra = strsep(&copia_ponteiro_linha, " ")) ){
+			while ((palavra = strsep(&copia_ponteiro_linha, " ")))
+			{
 
 				// antes de guardar a palavra em algum tipo de estrutura usada
 				// para implementar o índice, será necessário fazer uma copia
-				// da mesma, uma vez que o ponteiro 'palavra' aponta para uma 
+				// da mesma, uma vez que o ponteiro 'palavra' aponta para uma
 				// substring dentro da string 'linha', e a cada nova linha lida
 				// o conteúdo da linha anterior é sobreescrito.
 
 				// Coloca todas as palavras em minusculo
-				for(int i = 0; palavra[i]; i++)
+				for (int i = 0; palavra[i]; i++)
 				{
 					palavra[i] = tolower(palavra[i]);
 				}
@@ -120,7 +123,7 @@ int main(int argc, char ** argv){
 		// Entrada
 		bool continua = true;
 
-		while(continua)
+		while (continua)
 		{
 			char entrada[100];
 			char *comando;
@@ -130,9 +133,9 @@ int main(int argc, char ** argv){
 			fgets(entrada, 100, stdin);
 
 			// pega primeira palavra da string (primeiro token)
-			comando = strtok(entrada, " ");			
-			
-			if(strcmp(comando, "fim\n") == 0) 
+			comando = strtok(entrada, " ");
+
+			if (strcmp(comando, "fim\n") == 0)
 			{
 				// caso a entrada seja "fim", encerra o programa
 				return 0;
@@ -142,22 +145,21 @@ int main(int argc, char ** argv){
 				// caso o comando seja "busca", obter segundo token
 				// (segunda palavra da string)
 
-				// obtem palavra a ser buscada 
+				// obtem palavra a ser buscada
 				char *palavra;
 				palavra = strtok(NULL, "\n");
 
 				// busca pela palavra
 				busca(palavra, argv[2]);
-				
+
 				continue;
 			}
-			else 
+			else
 			{
 				printf("Opcao invalida!\n");
 				continue;
 			}
 		}
-
 
 		return 0;
 	}
@@ -173,17 +175,17 @@ bool busca(char *palavra, char *indice)
 	// Inicia a contagem do tempo de busca
 	clock_t tic = clock();
 
-	if(strcmp(indice, "lista") == 0)
+	if (strcmp(indice, "lista") == 0)
 	{
 		palavra_foi_encontrada = busca_lista(palavra);
 	}
-	else if(strcmp(indice, "arvore") == 0)
+	else if (strcmp(indice, "arvore") == 0)
 	{
 		palavra_foi_encontrada = busca_arvore(palavra);
 	}
 
 	// Imprime no terminal de acordo com o resultado
-	if(palavra_foi_encontrada)
+	if (palavra_foi_encontrada)
 	{
 		printf("Existem %d ocorrências da palavra '%s' na(s) seguinte(s) linha(s):\n", ocorrencias, palavra);
 	}
@@ -216,11 +218,11 @@ bool busca_arvore(char *palavra)
 
 void insere(char *palavra, char *indice)
 {
-	if(strcmp(indice, "lista") == 0)
+	if (strcmp(indice, "lista") == 0)
 	{
 		insere_lista(palavra);
 	}
-	else if(strcmp(indice, "arvore") == 0)
+	else if (strcmp(indice, "arvore") == 0)
 	{
 		insere_arvore(palavra);
 	}
@@ -235,5 +237,5 @@ void insere_lista(char *palavra)
 
 void insere_arvore(char *palavra)
 {
-	return;	
+	return;
 }
