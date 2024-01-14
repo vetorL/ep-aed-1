@@ -13,6 +13,7 @@
 // Turma: 94
 // ==========  
 
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -89,6 +90,12 @@ int main(int argc, char ** argv){
 				// da mesma, uma vez que o ponteiro 'palavra' aponta para uma 
 				// substring dentro da string 'linha', e a cada nova linha lida
 				// o conteúdo da linha anterior é sobreescrito.
+
+				// Coloca todas as palavras em minusculo
+				for(int i = 0; palavra[i]; i++)
+				{
+					palavra[i] = tolower(palavra[i]);
+				}
 
 				// insere a palavra na estrutura
 				insere(palavra, argv[2]);
