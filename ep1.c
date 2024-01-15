@@ -175,6 +175,11 @@ bool busca(char *palavra, char *indice)
 {
 	int ocorrencias = 0;
 
+	for (int i = 0; palavra[i]; i++)
+	{
+		palavra[i] = tolower(palavra[i]);
+	}
+
 	// Inicia a contagem do tempo de busca
 	clock_t tic = clock();
 
