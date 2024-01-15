@@ -2,6 +2,15 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+Elemento *cria_elemento(char *palavra, int num_ocorrencias, char *texto_linha, int num_linha)
+{
+    Elemento *e = (Elemento *)malloc(sizeof(Elemento));
+    e->palavra = palavra;
+    e->num_ocorrencias = num_ocorrencias;
+    e->linha = cria_linha(texto_linha, num_linha);
+    return e;
+}
+
 Arvore *cria_arvore()
 {
 
