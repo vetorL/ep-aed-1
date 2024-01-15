@@ -27,10 +27,10 @@ Arvore *cria_arvore()
     return arvore;
 }
 
-bool insere_arvore(Arvore *arvore, No *pai, Elemento *e, int lado)
+bool insere_arvore(Arvore *arvore, NoAr *pai, Elemento *e, int lado)
 {
 
-    No *novo = (No *)malloc(sizeof(No));
+    NoAr *novo = (NoAr *)malloc(sizeof(NoAr));
 
     novo->valor = e;
     novo->esq = novo->dir = NULL;
@@ -66,16 +66,13 @@ bool insere_arvore(Arvore *arvore, No *pai, Elemento *e, int lado)
     return false;
 }
 
-No *busca_rec(No *no, Elemento *e)
+NoAr *busca_rec(NoAr *no, Elemento *e)
 {
 
-    No *aux;
+    NoAr *aux;
 
     if (no)
     {
-
-        if (__debug__)
-            display_no(no);
 
         if (no->valor == e)
             return no;
@@ -90,16 +87,16 @@ No *busca_rec(No *no, Elemento *e)
     return NULL;
 }
 
-No *busca_arvore(Arvore *arvore, Elemento *e)
+NoAr *busca_arvore(Arvore *arvore, Elemento *e)
 {
 
     return busca_rec(arvore->raiz, e);
 }
 
-No *encontra_pai(No *raiz, No *no)
+NoAr *encontra_pai(NoAr *raiz, NoAr *no)
 {
 
-    No *aux;
+    NoAr *aux;
 
     if (raiz)
     {
