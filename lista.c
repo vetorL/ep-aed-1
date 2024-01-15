@@ -147,7 +147,7 @@ void imprime_ocorrencias_lista(char *palavra, ListaLigada *lista)
             {
                 if (atual_linha != NULL)
                 {
-                    printf("%05d: %s\n", atual->linhas->num_linha, atual->linhas->texto_linha);
+                    printf("%05d: %s\n", atual_linha->num_linha, atual_linha->texto_linha);
                     atual_linha = atual_linha->proximo;
                 }
                 else
