@@ -31,6 +31,11 @@ Arvore *cria_arvore()
 
 bool insere_arvore(Arvore *arvore, char *palavra, char *texto_linha, int num_linha)
 {
+    Elemento *e = cria_elemento(palavra, texto_linha, num_linha);
+
+    NoAr *pai = NULL;
+
+    int lado = DIREITO;
 
     NoAr *novo = (NoAr *)malloc(sizeof(NoAr));
 
