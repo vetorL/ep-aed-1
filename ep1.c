@@ -196,19 +196,22 @@ bool busca(char *palavra, char *indice)
 	else if (strcmp(indice, "arvore") == 0)
 	{
 		NoAr *no = busca_arvore(arvore, palavra);
-		if (strcmp(no->valor->palavra, palavra) == 0)
+		if (no)
 		{
-			ocorrencias = no->valor->num_ocorrencias;
-		}
-		// Imprime no terminal de acordo com o resultado
-		if (ocorrencias)
-		{
-			printf("Existem %d ocorrências da palavra '%s' na(s) seguinte(s) linha(s):\n", ocorrencias, palavra);
-			// imprime_ocorrencias_arvore(palavra, arvore);
-		}
-		else
-		{
-			printf("Palavra '%s' nao encontrada.\n", palavra);
+			if (strcmp(no->valor->palavra, palavra) == 0)
+			{
+				ocorrencias = no->valor->num_ocorrencias;
+			}
+			// Imprime no terminal de acordo com o resultado
+			if (ocorrencias)
+			{
+				printf("Existem %d ocorrências da palavra '%s' na(s) seguinte(s) linha(s):\n", ocorrencias, palavra);
+				// imprime_ocorrencias_arvore(palavra, arvore);
+			}
+			else
+			{
+				printf("Palavra '%s' nao encontrada.\n", palavra);
+			}
 		}
 	}
 
