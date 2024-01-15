@@ -25,12 +25,51 @@ cria_entrada(char *palavra)
 {
     Entrada *entrada = (Entrada *)malloc(sizeof(Entrada));
     entrada->palavra = palavra;
-    entrada->num_ocorrencias = 0;
+    entrada->num_ocorrencias = 1;
     return entrada;
 }
 
-void insere_lista(char *palavra)
+void insere_lista(char *palavra, ListaLigada *lista)
 {
+    // Checar se existe palavra na lista
+    if (lista->cabeca == NULL)
+    {
+        // Lista esta vazia
+
+        // Cria entrada
+        Entrada *entrada = cria_entrada(palavra);
+
+        // Cria no
+        No *no = cria_no(entrada);
+
+        lista->cabeca = no;
+    }
+    else
+    {
+        // Lista ja tem palavra
+
+        // Checar se a palavra ja foi anteriormente inserida
+        No *atual = lista->cabeca;
+        while (true)
+        {
+            if (atual->entrada->palavra == palavra)
+            {
+                // Caso em que a palavra ja foi inserida
+                atual->entrada->num_ocorrencias++;
+                return;
+            }
+            else if (atual->proximo == NULL)
+            {
+                // Palavra nao foi encontrada, criar novo No
+                Entrada *entrada = cria_entrada(palavra);
+                No *no = cria_no(entrada);
+                atual->proximo = no;
+                return;
+            }
+            atual = atual->proximo;
+        }
+    }
+
     return;
 }
 
