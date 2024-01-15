@@ -240,9 +240,7 @@ void insere(char *palavra, char *indice, char *texto_linha, int num_linha)
 	}
 	else if (strcmp(indice, "arvore") == 0)
 	{
-		int determinar_lado = ESQUERDO;
-		Elemento *e = cria_elemento(palavra, texto_linha, num_linha);
-		insere_arvore(arvore, arvore->raiz, e, determinar_lado);
+		insere_arvore(arvore, palavra, texto_linha, num_linha);
 	}
 
 	return;

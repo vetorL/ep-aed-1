@@ -33,7 +33,7 @@ typedef struct
 } Arvore;
 
 Arvore *cria_arvore();
-bool insere_arvore(Arvore *arvore, NoAr *pai, Elemento *e, int lado);
+bool insere_arvore(Arvore *arvore, char *palavra, char *texto_linha, int num_linha);
 NoAr *busca_arvore(Arvore *arvore, char *palavra);
 Elemento *cria_elemento(char *palavra, char *texto_linha, int num_linha);
 LinhaAr *cria_linha_ar(char *texto_linha, int num_linha);

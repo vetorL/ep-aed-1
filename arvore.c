@@ -38,7 +38,7 @@ Arvore *cria_arvore()
     return arvore;
 }
 
-bool insere_arvore(Arvore *arvore, NoAr *pai, Elemento *e, int lado)
+bool insere_arvore(Arvore *arvore, char *palavra, char *texto_linha, int num_linha)
 {
 
     NoAr *novo = (NoAr *)malloc(sizeof(NoAr));
