@@ -1,7 +1,7 @@
 *** Instruções para compilar o EP ***
 No terminal:
-make ep1
-./ep1 texto.txt arvore
+gcc ep1.c lista.c
+./ep1 texto.txt lista
 
 ==========
 Membros do grupo:
