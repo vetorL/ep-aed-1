@@ -12,6 +12,14 @@ cria_lista()
     return lista;
 }
 
+No *cria_no(Entrada *entrada)
+{
+    No *no = (No *)malloc(sizeof(No));
+    no->entrada = entrada;
+    no->proximo = NULL;
+    return no;
+}
+
 Entrada *
 cria_entrada(char *palavra)
 {
