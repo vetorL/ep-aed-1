@@ -1,6 +1,7 @@
 {
   "files.associations": {
     "ctype.h": "c",
-    "filtra.h": "c"
+    "filtra.h": "c",
+    "stdio.h": "c"
   }
 }

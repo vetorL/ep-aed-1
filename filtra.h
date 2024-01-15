@@ -1,3 +1,3 @@
 #include "filtra.c"
 
-void filtra(char *palavra);
+bool filtra(char *palavra);

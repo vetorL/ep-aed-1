@@ -95,7 +95,12 @@ int main(int argc, char **argv)
 				// o conteúdo da linha anterior é sobreescrito.
 
 				// Filtra palavra
-				filtra(palavra);
+				bool palavra_vazia = filtra(palavra);
+
+				if (palavra_vazia)
+				{
+					continue;
+				}
 
 				// insere a palavra na estrutura
 				insere(palavra, argv[2]);
