@@ -73,7 +73,31 @@ void insere_lista(char *palavra, ListaLigada *lista)
     return;
 }
 
-int busca_lista(char *palavra)
+int busca_lista(char *palavra, ListaLigada *lista)
 {
+    if (lista->cabeca == NULL)
+    {
+        // Lista esta vazia, portanto nao tem palavras
+        return 0;
+    }
+    else
+    {
+        No *atual = lista->cabeca;
+        while (true)
+        {
+            if (atual->entrada->palavra == palavra)
+            {
+                // Palavra achada, retorna numero de ocorrencias
+                return atual->entrada->num_ocorrencias;
+            }
+            else if (atual->proximo == NULL)
+            {
+                // Palavra nao foi encontrada, retorna zero
+                return 0;
+            }
+            atual = atual->proximo;
+        }
+    }
+
     return 0;
 }
