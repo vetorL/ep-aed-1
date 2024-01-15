@@ -118,7 +118,16 @@ NoAr *busca_arvore(Arvore *arvore, char *palavra)
 
 void imprime_ocorrencias_arvore(Arvore *arvore, char *palavra)
 {
-    NoAr *no = busca_arvore(arvore, palavra);
-    printf("%05d: %s\n", no->valor->linha->num_linha, no->valor->linha->texto_linha);
+    LinhaAr *linha_atual = busca_arvore(arvore, palavra)->valor->linha;
+    while (true)
+    {
+        if (linha_atual->proximo == NULL)
+        {
+            printf("%05d: %s\n", linha_atual->num_linha, linha_atual->texto_linha);
+            return;
+        }
+        printf("%05d: %s\n", linha_atual->num_linha, linha_atual->texto_linha);
+        linha_atual = linha_atual->proximo;
+    }
     return;
 }
