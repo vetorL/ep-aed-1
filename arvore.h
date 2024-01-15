@@ -7,13 +7,13 @@ typedef struct
 {
     char *texto_linha;
     int num_linha;
-} Linha;
+} LinhaAr;
 
 typedef struct
 {
     char *palavra;
     int num_ocorrencias;
-    Linha *linha;
+    LinhaAr *linha;
 } Elemento;
 
 typedef struct _no_arvore_

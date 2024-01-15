@@ -5,7 +5,7 @@
 
 Linha *cria_linha(char *texto_linha, int num_linha)
 {
-    Linha *line = (Linha *)malloc(sizeof(Linha));
+    LinhaAr *line = (LinhaAr *)malloc(sizeof(LinhaAr));
     line->texto_linha = texto_linha;
     line->num_linha = num_linha;
     return line;
