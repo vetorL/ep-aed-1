@@ -73,6 +73,10 @@ bool insere_arvore(Arvore *arvore, char *palavra, char *texto_linha, int num_lin
 
         return true;
     }
+    else
+    {
+        busca_arvore(arvore, e->palavra)->valor->num_ocorrencias += 1;
+    }
 
     return false;
 }
