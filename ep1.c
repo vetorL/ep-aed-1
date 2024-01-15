@@ -29,6 +29,7 @@ bool busca(char *palavra, char *indice);
 void insere(char *palavra, char *indice, char *texto_linha, int num_linha);
 
 ListaLigada *lista;
+Arvore *arvore;
 
 int main(int argc, char **argv)
 {
@@ -52,6 +53,8 @@ int main(int argc, char **argv)
 		// Identifica a estrutura a ser utilizada
 		if (strcmp(argv[2], "arvore") == 0)
 		{
+			// Cria arvore
+			arvore = cria_arvore();
 		}
 		else if (strcmp(argv[2], "lista") == 0)
 		{
