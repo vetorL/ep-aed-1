@@ -16,5 +16,6 @@ typedef struct
 } ListaLigada;
 
 Entrada *cria_lista();
+Entrada *cria_entrada();
 void insere_lista(char *palavra);
 int busca_lista(char *palavra);
