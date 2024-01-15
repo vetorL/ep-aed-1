@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-Linha *cria_linha(char *texto_linha, int num_linha)
+LinhaAr *cria_linha_ar(char *texto_linha, int num_linha)
 {
     LinhaAr *line = (LinhaAr *)malloc(sizeof(LinhaAr));
     line->texto_linha = texto_linha;
@@ -16,7 +16,7 @@ Elemento *cria_elemento(char *palavra, int num_ocorrencias, char *texto_linha, i
     Elemento *e = (Elemento *)malloc(sizeof(Elemento));
     e->palavra = palavra;
     e->num_ocorrencias = num_ocorrencias;
-    e->linha = cria_linha(texto_linha, num_linha);
+    e->linha = cria_linha_ar(texto_linha, num_linha);
     return e;
 }
 
