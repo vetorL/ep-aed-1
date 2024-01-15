@@ -80,6 +80,7 @@ int main(int argc, char **argv)
 				*quebra_de_linha = 0;
 
 			printf("linha %03d: '%s'\n", contador_linha + 1, linha);
+			char *linha_copia = strdup(linha);
 
 			// fazemos uma copia do endereço que corresponde ao array de chars
 			// usado para armazenar cada linha lida do arquivo pois a função 'strsep'
@@ -106,7 +107,6 @@ int main(int argc, char **argv)
 				}
 
 				char *copia_ponteiro_palavra = strdup(palavra);
-				char *linha_copia = strdup(linha);
 
 				// insere a palavra na estrutura
 				insere(copia_ponteiro_palavra, argv[2], linha_copia, contador_linha + 1);
