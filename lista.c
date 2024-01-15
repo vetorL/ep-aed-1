@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <string.h>
 
 ListaLigada *
 cria_lista()
@@ -52,7 +53,7 @@ void insere_lista(char *palavra, ListaLigada *lista)
         No *atual = lista->cabeca;
         while (true)
         {
-            if (atual->entrada->palavra == palavra)
+            if (strcmp(atual->entrada->palavra, palavra) == 0)
             {
                 // Caso em que a palavra ja foi inserida
                 atual->entrada->num_ocorrencias++;
@@ -85,7 +86,7 @@ int busca_lista(char *palavra, ListaLigada *lista)
         No *atual = lista->cabeca;
         while (true)
         {
-            if (atual->entrada->palavra == palavra)
+            if (strcmp(atual->entrada->palavra, palavra) == 0)
             {
                 // Palavra achada, retorna numero de ocorrencias
                 return atual->entrada->num_ocorrencias;
