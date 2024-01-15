@@ -1,6 +1,6 @@
 *** Instruções para compilar o EP ***
 No terminal:
-gcc ep1.c lista.c
+gcc ep1.c lista.c arvore.c
 ./ep1 texto.txt lista
 
 ==========
