@@ -14,6 +14,8 @@
 // ==========
 
 #include "filtra.h"
+#include "lista.c"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -24,9 +26,7 @@
 
 bool busca(char *palavra, char *indice);
 void insere(char *palavra, char *indice);
-bool busca_lista(char *palavra);
 bool busca_arvore(char *palavra);
-void insere_lista(char *palavra);
 void insere_arvore(char *palavra);
 
 int main(int argc, char **argv)
@@ -208,11 +208,6 @@ bool busca(char *palavra, char *indice)
 	return palavra_foi_encontrada;
 }
 
-bool busca_lista(char *palavra)
-{
-	return false;
-}
-
 bool busca_arvore(char *palavra)
 {
 	return false;
@@ -229,11 +224,6 @@ void insere(char *palavra, char *indice)
 		insere_arvore(palavra);
 	}
 
-	return;
-}
-
-void insere_lista(char *palavra)
-{
 	return;
 }
 
