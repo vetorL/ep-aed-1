@@ -1,5 +1,12 @@
 #include "arvore.c"
 
+typedef struct
+{
+    char *palavra;
+    int num_ocorrencias;
+    Linha *linha;
+} Elemento;
+
 typedef struct _no_arvore_
 {
 
