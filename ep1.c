@@ -49,8 +49,6 @@ int main(int argc, char **argv)
 
 		in = fopen(argv[1], "r");
 
-		printf(">>>>> Carregando arquivo...\n");
-
 		// Identifica a estrutura a ser utilizada
 		if (strcmp(argv[2], "arvore") == 0)
 		{
@@ -79,7 +77,6 @@ int main(int argc, char **argv)
 			if ((quebra_de_linha = strrchr(linha, '\n')))
 				*quebra_de_linha = 0;
 
-			printf("linha %03d: '%s'\n", contador_linha + 1, linha);
 			char *linha_copia = strdup(linha);
 
 			// fazemos uma copia do endereço que corresponde ao array de chars
@@ -110,14 +107,10 @@ int main(int argc, char **argv)
 
 				// insere a palavra na estrutura
 				insere(copia_ponteiro_palavra, argv[2], linha_copia, contador_linha + 1);
-
-				printf("\t\t'%s'\n", palavra);
 			}
 
 			contador_linha++;
 		}
-
-		printf(">>>>> Arquivo carregado!\n");
 
 		// Termina a contagem do tempo de execução
 		clock_t toc = clock();
