@@ -208,10 +208,6 @@ bool busca(char *palavra, char *indice)
 				printf("Existem %d ocorrências da palavra '%s' na(s) seguinte(s) linha(s):\n", ocorrencias, palavra);
 				imprime_ocorrencias_arvore(arvore, palavra);
 			}
-			else
-			{
-				printf("Palavra '%s' nao encontrada.\n", palavra);
-			}
 		}
 	}
 
@@ -221,6 +217,11 @@ bool busca(char *palavra, char *indice)
 	// calcula o tempo de busca
 	double tempo_busca;
 	tempo_busca = ((double)(toc - tic) / CLOCKS_PER_SEC) * 1000;
+
+	if (strcmp(indice, "arvore") == 0 && ocorrencias == 0)
+	{
+		printf("Palavra '%s' nao encontrada.\n", palavra);
+	}
 
 	printf("Tempo de busca: %f ms\n", tempo_busca);
 
