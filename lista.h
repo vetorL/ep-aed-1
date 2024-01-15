@@ -29,4 +29,5 @@ Entrada *cria_entrada(char *palavra);
 void insere_lista(char *palavra, ListaLigada *lista);
 int busca_lista(char *palavra, ListaLigada *lista);
 void imprime_lista(ListaLigada *lista);
-Linha *cria_linha(char *texto_linha, int num_linha)
+Linha *cria_linha(char *texto_linha, int num_linha);
+void imprime_ocorrencias_lista(char *palavra, ListaLigada *lista);

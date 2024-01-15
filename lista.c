@@ -131,3 +131,22 @@ void imprime_lista(ListaLigada *lista)
         }
     }
 }
+
+void imprime_ocorrencias_lista(char *palavra, ListaLigada *lista)
+{
+    No *atual = lista->cabeca;
+    while (true)
+    {
+        // caso ache o no com a palavra
+        if (strcmp(atual->entrada->palavra, palavra) == 0)
+        {
+            char *texto_linha = atual->linhas->texto_linha;
+            int num_linha = atual->linhas->num_linha;
+            printf("%05d: %s\n", num_linha, texto_linha);
+            return;
+        }
+
+        // vai para o proximo caso nao ache
+        atual = atual->proximo;
+    }
+}
