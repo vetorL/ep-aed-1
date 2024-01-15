@@ -72,7 +72,18 @@ bool insere_arvore(Arvore *arvore, char *palavra, char *texto_linha, int num_lin
     }
     else
     {
-        busca_arvore(arvore, e->palavra)->valor->num_ocorrencias += 1;
+        NoAr *no_1 = busca_arvore(arvore, e->palavra);
+        no_1->valor->num_ocorrencias += 1;
+        LinhaAr *linha_atual = no_1->valor->linha;
+        while (true)
+        {
+            if (linha_atual->proximo == NULL)
+            {
+                linha_atual->proximo = cria_linha_ar(texto_linha, num_linha);
+                return false;
+            }
+            linha_atual = linha_atual->proximo;
+        }
     }
 
     return false;
