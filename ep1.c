@@ -223,7 +223,7 @@ bool busca(char *palavra, char *indice)
 		printf("Palavra '%s' nao encontrada.\n", palavra);
 	}
 
-	printf("Tempo de busca: %f ms\n", tempo_busca);
+	printf("Tempo de busca: %.03f ms\n", tempo_busca);
 
 	if (ocorrencias)
 	{
