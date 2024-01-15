@@ -3,23 +3,6 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-struct Entrada
-{
-    char *palavra;
-    int num_ocorrencias = 0;
-}
-
-struct No
-{
-    Entrada *e;
-    No *proximo;
-}
-
-struct ListaLigada
-{
-    No *cabeca;
-}
-
 ListaLigada *
 cria_lista()
 {
