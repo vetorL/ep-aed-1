@@ -181,6 +181,17 @@ bool busca(char *palavra, char *indice)
 	if (strcmp(indice, "lista") == 0)
 	{
 		ocorrencias = busca_lista(palavra, lista);
+
+		// Imprime no terminal de acordo com o resultado
+		if (ocorrencias)
+		{
+			printf("Existem %d ocorrências da palavra '%s' na(s) seguinte(s) linha(s):\n", ocorrencias, palavra);
+			imprime_ocorrencias_lista(palavra, lista);
+		}
+		else
+		{
+			printf("Palavra '%s' nao encontrada.\n", palavra);
+		}
 	}
 	else if (strcmp(indice, "arvore") == 0)
 	{
@@ -189,17 +200,16 @@ bool busca(char *palavra, char *indice)
 		{
 			ocorrencias = no->valor->num_ocorrencias;
 		}
-	}
-
-	// Imprime no terminal de acordo com o resultado
-	if (ocorrencias)
-	{
-		printf("Existem %d ocorrências da palavra '%s' na(s) seguinte(s) linha(s):\n", ocorrencias, palavra);
-		imprime_ocorrencias_lista(palavra, lista);
-	}
-	else
-	{
-		printf("Palavra '%s' nao encontrada.\n", palavra);
+		// Imprime no terminal de acordo com o resultado
+		if (ocorrencias)
+		{
+			printf("Existem %d ocorrências da palavra '%s' na(s) seguinte(s) linha(s):\n", ocorrencias, palavra);
+			// imprime_ocorrencias_arvore(palavra, arvore);
+		}
+		else
+		{
+			printf("Palavra '%s' nao encontrada.\n", palavra);
+		}
 	}
 
 	// Termina a contagem do tempo de busca
