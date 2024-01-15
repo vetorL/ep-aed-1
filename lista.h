@@ -4,9 +4,17 @@ typedef struct
     int num_ocorrencias;
 } Entrada;
 
+typedef struct _lin_
+{
+    char *texto_linha;
+    int num_linha;
+    struct _lin_ *proximo;
+} Linha;
+
 typedef struct _no_
 {
     Entrada *entrada;
+    Linha *linhas;
     struct _no_ *proximo;
 } No;
 
