@@ -13,6 +13,14 @@ cria_lista()
     return lista;
 }
 
+Linha *cria_linha(char *texto_linha, int num_linha)
+{
+    Linha *linha = (Linha *)malloc(sizeof(Linha));
+    linha->texto_linha = texto_linha;
+    linha->num_linha = num_linha;
+    return linha;
+}
+
 No *cria_no(Entrada *entrada)
 {
     No *no = (No *)malloc(sizeof(No));
