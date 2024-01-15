@@ -2,6 +2,14 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+Linha *cria_linha(char *texto_linha, int num_linha)
+{
+    Linha *line = (Linha *)malloc(sizeof(Linha));
+    line->texto_linha = texto_linha;
+    line->num_linha = num_linha;
+    return line;
+}
+
 Elemento *cria_elemento(char *palavra, int num_ocorrencias, char *texto_linha, int num_linha)
 {
     Elemento *e = (Elemento *)malloc(sizeof(Elemento));

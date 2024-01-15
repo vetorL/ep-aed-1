@@ -4,6 +4,7 @@
     "filtra.h": "c",
     "stdio.h": "c",
     "lista.c": "cpp",
-    "stdlib.h": "c"
+    "stdlib.h": "c",
+    "arvore.h": "c"
   }
 }
