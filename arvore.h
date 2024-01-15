@@ -2,6 +2,12 @@
 
 typedef struct
 {
+    char *texto_linha;
+    int num_linha;
+} Linha;
+
+typedef struct
+{
     char *palavra;
     int num_ocorrencias;
     Linha *linha;
