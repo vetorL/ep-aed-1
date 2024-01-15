@@ -1,7 +1,7 @@
 *** Instruções para compilar o EP ***
 No terminal:
 gcc ep1.c lista.c arvore.c
-./ep1 texto.txt lista
+./ep1 texto.txt lista ou ./ep1 texto.txt arvore
 
 ==========
 Membros do grupo:
