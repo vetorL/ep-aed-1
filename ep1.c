@@ -26,7 +26,7 @@
 #define TAMANHO 1000
 
 bool busca(char *palavra, char *indice);
-void insere(char *palavra, char *indice);
+void insere(char *palavra, char *indice, char *texto_linha, int num_linha);
 
 ListaLigada *lista;
 
@@ -106,9 +106,10 @@ int main(int argc, char **argv)
 				}
 
 				char *copia_ponteiro_palavra = strdup(palavra);
+				char *linha_copia = strdup(linha);
 
 				// insere a palavra na estrutura
-				insere(copia_ponteiro_palavra, argv[2]);
+				insere(copia_ponteiro_palavra, argv[2], linha_copia, contador_linha + 1);
 
 				printf("\t\t'%s'\n", palavra);
 			}
@@ -218,11 +219,11 @@ bool busca(char *palavra, char *indice)
 	return false;
 }
 
-void insere(char *palavra, char *indice)
+void insere(char *palavra, char *indice, char *texto_linha, int num_linha)
 {
 	if (strcmp(indice, "lista") == 0)
 	{
-		insere_lista(palavra, lista);
+		insere_lista(palavra, lista, texto_linha, num_linha);
 	}
 	else if (strcmp(indice, "arvore") == 0)
 	{

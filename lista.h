@@ -24,9 +24,9 @@ typedef struct
 } ListaLigada;
 
 ListaLigada *cria_lista();
-No *cria_no(Entrada *entrada);
+No *cria_no(Entrada *entrada, char *texto_linha, int num_linha);
 Entrada *cria_entrada(char *palavra);
-void insere_lista(char *palavra, ListaLigada *lista);
+void insere_lista(char *palavra, ListaLigada *lista, char *texto_linha, int num_linha);
 int busca_lista(char *palavra, ListaLigada *lista);
 void imprime_lista(ListaLigada *lista);
 Linha *cria_linha(char *texto_linha, int num_linha);

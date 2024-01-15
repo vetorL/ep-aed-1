@@ -21,10 +21,11 @@ Linha *cria_linha(char *texto_linha, int num_linha)
     return linha;
 }
 
-No *cria_no(Entrada *entrada)
+No *cria_no(Entrada *entrada, char *texto_linha, int num_linha)
 {
     No *no = (No *)malloc(sizeof(No));
     no->entrada = entrada;
+    no->linhas = cria_linha(texto_linha, num_linha);
     no->proximo = NULL;
     return no;
 }
@@ -38,7 +39,7 @@ cria_entrada(char *palavra)
     return entrada;
 }
 
-void insere_lista(char *palavra, ListaLigada *lista)
+void insere_lista(char *palavra, ListaLigada *lista, char *texto_linha, int num_linha)
 {
     // Checar se existe palavra na lista
     if (lista->cabeca == NULL)
@@ -49,7 +50,7 @@ void insere_lista(char *palavra, ListaLigada *lista)
         Entrada *entrada = cria_entrada(palavra);
 
         // Cria no
-        No *no = cria_no(entrada);
+        No *no = cria_no(entrada, texto_linha, num_linha);
 
         lista->cabeca = no;
     }
@@ -71,7 +72,7 @@ void insere_lista(char *palavra, ListaLigada *lista)
             {
                 // Palavra nao foi encontrada, criar novo No
                 Entrada *entrada = cria_entrada(palavra);
-                No *no = cria_no(entrada);
+                No *no = cria_no(entrada, texto_linha, num_linha);
                 atual->proximo = no;
                 return;
             }
