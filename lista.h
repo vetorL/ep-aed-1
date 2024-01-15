@@ -4,10 +4,10 @@ typedef struct
     int num_ocorrencias;
 } Entrada;
 
-typedef struct
+typedef struct _no_
 {
     Entrada *entrada;
-    No *proximo;
+    struct _no_ *proximo;
 } No;
 
 typedef struct
