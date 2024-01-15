@@ -18,6 +18,7 @@ Linha *cria_linha(char *texto_linha, int num_linha)
     Linha *linha = (Linha *)malloc(sizeof(Linha));
     linha->texto_linha = texto_linha;
     linha->num_linha = num_linha;
+    linha->proximo = NULL;
     return linha;
 }
 
@@ -66,6 +67,21 @@ void insere_lista(char *palavra, ListaLigada *lista, char *texto_linha, int num_
             {
                 // Caso em que a palavra ja foi inserida
                 atual->entrada->num_ocorrencias++;
+                // Acha uma Linha com o proximo = NULL
+                Linha *atual_linha = atual->linhas;
+                while (true)
+                {
+                    if (atual_linha->proximo == NULL)
+                    {
+                        // achou espaco vago
+                        atual_linha->proximo = cria_linha(texto_linha, num_linha);
+                        return;
+                    }
+                    else
+                    {
+                        atual_linha = atual_linha->proximo;
+                    }
+                }
                 return;
             }
             else if (atual->proximo == NULL)
