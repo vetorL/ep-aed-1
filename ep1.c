@@ -206,7 +206,7 @@ bool busca(char *palavra, char *indice)
 			if (ocorrencias)
 			{
 				printf("Existem %d ocorrências da palavra '%s' na(s) seguinte(s) linha(s):\n", ocorrencias, palavra);
-				// imprime_ocorrencias_arvore(palavra, arvore);
+				imprime_ocorrencias_arvore(arvore, palavra);
 			}
 			else
 			{

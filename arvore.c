@@ -103,3 +103,10 @@ NoAr *busca_arvore(Arvore *arvore, char *palavra)
 
     return busca_rec(arvore->raiz, palavra);
 }
+
+void imprime_ocorrencias_arvore(Arvore *arvore, char *palavra)
+{
+    NoAr *no = busca_arvore(arvore, palavra);
+    printf("%05d: %s\n", no->valor->linha->num_linha, no->valor->linha->texto_linha);
+    return;
+}

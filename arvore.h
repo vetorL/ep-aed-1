@@ -34,6 +34,7 @@ typedef struct
 
 Arvore *cria_arvore();
 bool insere_arvore(Arvore *arvore, char *palavra, char *texto_linha, int num_linha);
+void imprime_ocorrencias_arvore(Arvore *arvore, char *palavra);
 NoAr *busca_arvore(Arvore *arvore, char *palavra);
 Elemento *cria_elemento(char *palavra, char *texto_linha, int num_linha);
 LinhaAr *cria_linha_ar(char *texto_linha, int num_linha);
