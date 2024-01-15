@@ -77,6 +77,11 @@ bool insere_arvore(Arvore *arvore, char *palavra, char *texto_linha, int num_lin
         LinhaAr *linha_atual = no_1->valor->linha;
         while (true)
         {
+            if (linha_atual->num_linha == num_linha)
+            {
+                // linha ja esta presente
+                return false;
+            }
             if (linha_atual->proximo == NULL)
             {
                 linha_atual->proximo = cria_linha_ar(texto_linha, num_linha);
