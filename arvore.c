@@ -78,3 +78,26 @@ No *busca_arvore(Arvore *arvore, Elemento e)
 
     return busca_rec(arvore->raiz, e);
 }
+
+No *encontra_pai(No *raiz, No *no)
+{
+
+    No *aux;
+
+    if (raiz)
+    {
+
+        if (raiz->esq == no)
+            return raiz;
+        if (raiz->dir == no)
+            return raiz;
+
+        aux = encontra_pai(raiz->esq, no);
+        if (aux)
+            return aux;
+
+        return encontra_pai(raiz->dir, no);
+    }
+
+    return NULL;
+}

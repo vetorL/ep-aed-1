@@ -33,4 +33,5 @@ typedef struct
 
 bool insere_arvore(Arvore *arvore, No *pai, Elemento e, int lado);
 No *busca_arvore(Arvore *arvore, Elemento e);
+No *encontra_pai(No *raiz, No *no);
 No *busca_rec(No *no, Elemento e);
