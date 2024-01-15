@@ -9,6 +9,7 @@ LinhaAr *cria_linha_ar(char *texto_linha, int num_linha)
     LinhaAr *line = (LinhaAr *)malloc(sizeof(LinhaAr));
     line->texto_linha = texto_linha;
     line->num_linha = num_linha;
+    line->proximo = NULL;
     return line;
 }
 
