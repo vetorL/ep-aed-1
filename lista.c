@@ -102,3 +102,24 @@ int busca_lista(char *palavra, ListaLigada *lista)
 
     return 0;
 }
+
+void imprime_lista(ListaLigada *lista)
+{
+    if (lista->cabeca == NULL)
+    {
+        puts("LISTA ESTA VAZIA");
+    }
+    else
+    {
+        No *atual = lista->cabeca;
+        while (true)
+        {
+            printf("%s - ", atual->entrada->palavra);
+            if (atual->proximo == NULL)
+            {
+                return;
+            }
+            atual = atual->proximo;
+        }
+    }
+}
