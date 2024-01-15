@@ -3,10 +3,11 @@
 #define ESQUERDO 0
 #define DIREITO 1
 
-typedef struct
+typedef struct _xin_
 {
     char *texto_linha;
     int num_linha;
+    struct _xin_ *proximo;
 } LinhaAr;
 
 typedef struct
