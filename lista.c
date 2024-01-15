@@ -71,6 +71,12 @@ void insere_lista(char *palavra, ListaLigada *lista, char *texto_linha, int num_
                 Linha *atual_linha = atual->linhas;
                 while (true)
                 {
+                    // conferi se a linha ja nao esta presente
+                    if (atual_linha->num_linha == num_linha)
+                    {
+                        return;
+                    }
+
                     if (atual_linha->proximo == NULL)
                     {
                         // achou espaco vago
