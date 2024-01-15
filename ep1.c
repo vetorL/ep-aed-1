@@ -28,6 +28,8 @@
 bool busca(char *palavra, char *indice);
 void insere(char *palavra, char *indice);
 
+ListaLigada *lista;
+
 int main(int argc, char **argv)
 {
 
@@ -55,6 +57,8 @@ int main(int argc, char **argv)
 		}
 		else if (strcmp(argv[2], "lista") == 0)
 		{
+			// Cria lista
+			lista = cria_lista();
 		}
 		else
 		{
