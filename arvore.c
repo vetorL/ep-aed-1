@@ -46,7 +46,7 @@ bool insere_arvore(Arvore *arvore, NoAr *pai, Elemento *e, int lado)
     novo->valor = e;
     novo->esq = novo->dir = NULL;
 
-    if (!busca_arvore(arvore, e))
+    if (!busca_arvore(arvore, e->palavra))
     {
 
         if (pai)
@@ -85,7 +85,7 @@ NoAr *busca_rec(NoAr *no, char *palavra)
     if (no)
     {
 
-        if (strcmp(no->valor, palavra) == 0)
+        if (strcmp(no->valor->palavra, palavra) == 0)
             return no;
 
         aux = busca_rec(no->esq, palavra);
