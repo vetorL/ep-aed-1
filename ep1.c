@@ -184,7 +184,11 @@ bool busca(char *palavra, char *indice)
 	}
 	else if (strcmp(indice, "arvore") == 0)
 	{
-		ocorrencias = busca_arvore(palavra);
+		NoAr *no = busca_arvore(arvore, palavra);
+		if (strcmp(no->valor->palavra, palavra) == 0)
+		{
+			ocorrencias = no->valor->num_ocorrencias;
+		}
 	}
 
 	// Imprime no terminal de acordo com o resultado
