@@ -104,29 +104,6 @@ NoAr *busca_arvore(Arvore *arvore, char *palavra)
     return busca_rec(arvore->raiz, palavra);
 }
 
-NoAr *encontra_pai(NoAr *raiz, NoAr *no)
-{
-
-    NoAr *aux;
-
-    if (raiz)
-    {
-
-        if (raiz->esq == no)
-            return raiz;
-        if (raiz->dir == no)
-            return raiz;
-
-        aux = encontra_pai(raiz->esq, no);
-        if (aux)
-            return aux;
-
-        return encontra_pai(raiz->dir, no);
-    }
-
-    return NULL;
-}
-
 // int display_rec(char **buffer, NoAr *no, int level, double h_position)
 // {
 
