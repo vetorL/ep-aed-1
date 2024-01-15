@@ -18,7 +18,7 @@ bool insere_arvore(Arvore *arvore, No *pai, Elemento e, int lado)
     novo->valor = e;
     novo->esq = novo->dir = NULL;
 
-    if (!busca(arvore, e))
+    if (!busca_arvore(arvore, e))
     {
 
         if (pai)
@@ -47,4 +47,34 @@ bool insere_arvore(Arvore *arvore, No *pai, Elemento e, int lado)
     }
 
     return false;
+}
+
+No *busca_rec(No *no, Elemento e)
+{
+
+    No *aux;
+
+    if (no)
+    {
+
+        if (__debug__)
+            display_no(no);
+
+        if (no->valor == e)
+            return no;
+
+        aux = busca_rec(no->esq, e);
+        if (aux)
+            return aux;
+
+        return busca_rec(no->dir, e);
+    }
+
+    return NULL;
+}
+
+No *busca_arvore(Arvore *arvore, Elemento e)
+{
+
+    return busca_rec(arvore->raiz, e);
 }

@@ -32,4 +32,5 @@ typedef struct
 } Arvore;
 
 bool insere_arvore(Arvore *arvore, No *pai, Elemento e, int lado);
-bool busca_arvore(char *palavra);
+No *busca_arvore(Arvore *arvore, Elemento e);
+No *busca_rec(No *no, Elemento e);
