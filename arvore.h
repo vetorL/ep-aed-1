@@ -1,5 +1,3 @@
-#include "arvore.c"
-
 typedef struct
 {
     char *texto_linha;
