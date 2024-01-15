@@ -177,7 +177,7 @@ bool busca(char *palavra, char *indice)
 
 	if (strcmp(indice, "lista") == 0)
 	{
-		ocorrencias = busca_lista(palavra);
+		ocorrencias = busca_lista(palavra, lista);
 	}
 	else if (strcmp(indice, "arvore") == 0)
 	{
@@ -215,7 +215,7 @@ void insere(char *palavra, char *indice)
 {
 	if (strcmp(indice, "lista") == 0)
 	{
-		insere_lista(palavra);
+		insere_lista(palavra, lista);
 	}
 	else if (strcmp(indice, "arvore") == 0)
 	{
