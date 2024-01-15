@@ -171,22 +171,21 @@ int main(int argc, char **argv)
 bool busca(char *palavra, char *indice)
 {
 	int ocorrencias = 0;
-	bool palavra_foi_encontrada = false;
 
 	// Inicia a contagem do tempo de busca
 	clock_t tic = clock();
 
 	if (strcmp(indice, "lista") == 0)
 	{
-		palavra_foi_encontrada = busca_lista(palavra);
+		ocorrencias = busca_lista(palavra);
 	}
 	else if (strcmp(indice, "arvore") == 0)
 	{
-		palavra_foi_encontrada = busca_arvore(palavra);
+		ocorrencias = busca_arvore(palavra);
 	}
 
 	// Imprime no terminal de acordo com o resultado
-	if (palavra_foi_encontrada)
+	if (ocorrencias)
 	{
 		printf("Existem %d ocorrências da palavra '%s' na(s) seguinte(s) linha(s):\n", ocorrencias, palavra);
 	}
@@ -204,7 +203,12 @@ bool busca(char *palavra, char *indice)
 
 	printf("Tempo de busca: %f ms\n", tempo_busca);
 
-	return palavra_foi_encontrada;
+	if (ocorrencias)
+	{
+		return true;
+	}
+
+	return false;
 }
 
 void insere(char *palavra, char *indice)
