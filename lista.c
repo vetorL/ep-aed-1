@@ -141,9 +141,23 @@ void imprime_ocorrencias_lista(char *palavra, ListaLigada *lista)
         // caso ache o no com a palavra
         if (strcmp(atual->entrada->palavra, palavra) == 0)
         {
-            char *texto_linha = atual->linhas->texto_linha;
-            int num_linha = atual->linhas->num_linha;
-            printf("%05d: %s\n", num_linha, texto_linha);
+            // looping que imprime todas as linhas em que a palavra se encontra
+            Linha *atual_linha = atual->linhas;
+            while (true)
+            {
+                if (atual_linha != NULL)
+                {
+                    printf("%05d: %s\n", atual->linhas->num_linha, atual->linhas->texto_linha);
+                    atual_linha = atual_linha->proximo;
+                }
+                else
+                {
+                    return;
+                }
+            }
+            // char *texto_linha = atual->linhas->texto_linha;
+            // int num_linha = atual->linhas->num_linha;
+            // printf("%05d: %s\n", num_linha, texto_linha);
             return;
         }
 
