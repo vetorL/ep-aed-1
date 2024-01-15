@@ -27,7 +27,7 @@ Arvore *cria_arvore()
     return arvore;
 }
 
-bool insere_arvore(Arvore *arvore, No *pai, Elemento e, int lado)
+bool insere_arvore(Arvore *arvore, No *pai, Elemento *e, int lado)
 {
 
     No *novo = (No *)malloc(sizeof(No));
@@ -66,7 +66,7 @@ bool insere_arvore(Arvore *arvore, No *pai, Elemento e, int lado)
     return false;
 }
 
-No *busca_rec(No *no, Elemento e)
+No *busca_rec(No *no, Elemento *e)
 {
 
     No *aux;
@@ -90,7 +90,7 @@ No *busca_rec(No *no, Elemento e)
     return NULL;
 }
 
-No *busca_arvore(Arvore *arvore, Elemento e)
+No *busca_arvore(Arvore *arvore, Elemento *e)
 {
 
     return busca_rec(arvore->raiz, e);
