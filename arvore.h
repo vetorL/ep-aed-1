@@ -1,3 +1,7 @@
+#define INDEFINIDO -1
+#define ESQUERDO 0
+#define DIREITO 1
+
 typedef struct
 {
     char *texto_linha;
