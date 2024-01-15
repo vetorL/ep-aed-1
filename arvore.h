@@ -31,6 +31,5 @@ typedef struct
 
 } Arvore;
 
-bool insere(Arvore *arvore, No *pai, Elemento e, int lado);
-void insere_arvore(char *palavra);
+bool insere_arvore(Arvore *arvore, No *pai, Elemento e, int lado);
 bool busca_arvore(char *palavra);

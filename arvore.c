@@ -10,7 +10,7 @@ Arvore *cria_arvore()
     return arvore;
 }
 
-bool insere(Arvore *arvore, No *pai, Elemento e, int lado)
+bool insere_arvore(Arvore *arvore, No *pai, Elemento e, int lado)
 {
 
     No *novo = (No *)malloc(sizeof(No));
@@ -46,15 +46,5 @@ bool insere(Arvore *arvore, No *pai, Elemento e, int lado)
         return true;
     }
 
-    return false;
-}
-
-void insere_arvore(char *palavra)
-{
-    return;
-}
-
-bool busca_arvore(char *palavra)
-{
     return false;
 }
