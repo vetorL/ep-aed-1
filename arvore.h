@@ -19,7 +19,7 @@ typedef struct
 typedef struct _no_arvore_
 {
 
-    Elemento valor;
+    Elemento *valor;
     struct _no_arvore_ *esq;
     struct _no_arvore_ *dir;
 
