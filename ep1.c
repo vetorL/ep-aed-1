@@ -105,8 +105,10 @@ int main(int argc, char **argv)
 					continue;
 				}
 
+				char *copia_ponteiro_palavra = strdup(palavra);
+
 				// insere a palavra na estrutura
-				insere(palavra, argv[2]);
+				insere(copia_ponteiro_palavra, argv[2]);
 
 				printf("\t\t'%s'\n", palavra);
 			}
