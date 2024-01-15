@@ -32,6 +32,7 @@ typedef struct
 
 } Arvore;
 
+Arvore *cria_arvore();
 bool insere_arvore(Arvore *arvore, NoAr *pai, Elemento *e, int lado);
 NoAr *busca_arvore(Arvore *arvore, Elemento *e);
 NoAr *encontra_pai(NoAr *raiz, NoAr *no);
