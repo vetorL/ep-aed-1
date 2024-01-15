@@ -29,6 +29,15 @@ cria_lista()
     return lista;
 }
 
+Entrada *
+cria_entrada(char *palavra)
+{
+    Entrada *entrada = (Entrada *)malloc(sizeof(Entrada));
+    entrada->palavra = palavra;
+    entrada->num_ocorrencias = 0;
+    return entrada;
+}
+
 void insere_lista(char *palavra)
 {
     return;
