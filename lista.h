@@ -15,7 +15,7 @@ typedef struct
     No *cabeca;
 } ListaLigada;
 
-Entrada *cria_lista();
+ListaLigada *cria_lista();
 No *cria_no(Entrada *entrada);
 Entrada *cria_entrada(char *palavra);
 void insere_lista(char *palavra, ListaLigada *lista);
