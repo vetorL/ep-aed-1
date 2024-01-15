@@ -27,5 +27,5 @@ insere_lista(char *palavra)
 
 bool busca_lista(char *palavra)
 {
-    return false;
+    return 0;
 }
