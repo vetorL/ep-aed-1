@@ -21,11 +21,11 @@ LinhaAr *cria_linha_ar(char *texto_linha, int num_linha)
     return line;
 }
 
-Elemento *cria_elemento(char *palavra, int num_ocorrencias, char *texto_linha, int num_linha)
+Elemento *cria_elemento(char *palavra, char *texto_linha, int num_linha)
 {
     Elemento *e = (Elemento *)malloc(sizeof(Elemento));
     e->palavra = palavra;
-    e->num_ocorrencias = num_ocorrencias;
+    e->num_ocorrencias = 1;
     e->linha = cria_linha_ar(texto_linha, num_linha);
     return e;
 }

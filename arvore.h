@@ -36,7 +36,7 @@ Arvore *cria_arvore();
 bool insere_arvore(Arvore *arvore, NoAr *pai, Elemento *e, int lado);
 NoAr *busca_arvore(Arvore *arvore, char *palavra);
 NoAr *encontra_pai(NoAr *raiz, NoAr *no);
-Elemento *cria_elemento(char *palavra, int num_ocorrencias, char *texto_linha, int num_linha);
+Elemento *cria_elemento(char *palavra, char *texto_linha, int num_linha);
 LinhaAr *cria_linha_ar(char *texto_linha, int num_linha);
 // void display(Arvore *arvore);
 NoAr *busca_rec(NoAr *no, char *palavra);
